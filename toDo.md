@@ -6,13 +6,13 @@
 [x] index.html, style.css, client.js, server.js, router.js, 
 [x] source and link files as needed 
 [x] npm init, npm install, npm start, check packages
-[ ] set up server, check for success
+[x] set up server, check for success
 
 ##Set Up Database
 [ ] make db and table in postico -Use the name `weekend-to-do-app
 [ ] include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries
 
-## Connect Server and Datatbase
+## Connect Server and Database
 [ ] get
 [ ] post
 [ ] put
