@@ -3,9 +3,9 @@
 #NEW BRANCHES FOR NEW FEATURES
 
 ##Create Files & Folders
-[ ] index.html, style.css, client.js, server.js, router.js, 
-[ ] source and link files as needed 
-[ ] npm init, npm install, npm start, check packages
+[x] index.html, style.css, client.js, server.js, router.js, 
+[x] source and link files as needed 
+[x] npm init, npm install, npm start, check packages
 [ ] set up server, check for success
 
 ##Set Up Database
