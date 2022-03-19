@@ -9,3 +9,7 @@
 .blue {
    background-color: #151D3B;
 }
+
+.completed {
+    text-decoration: line-through;
+}

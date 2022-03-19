@@ -37,7 +37,40 @@ router.post('/', (req, res) => {
 })
 
 //PUT
+router.put('/:id', (req,res) => {
+    let id = req.params.id;
+    let content = req.body.completed;
 
+    console.log('in router PUT', content, id);
+
+    let queryText = '';
+
+    if (content === 'true') {
+        queryText =
+            `UPDATE "to-do"
+            SET "completed" = false
+            WHERE "id" = $1;
+            `
+    } else if (content === 'false') {
+        queryText =
+            `UPDATE "to-do"
+            SET "completed" = true
+            WHERE "id" = $1;
+            `
+    } else {
+        console.log('Error in server PUT');
+        
+    }
+
+    pool.query(queryText, [id])
+    .then (result =>{
+        res.sendStatus(200);
+    }).catch (err => {
+        console.log('POOL BROKE:', err);
+        res.sendStatus(500);
+    })
+    
+})
 //DELETE
 router.delete('/:id', (req, res) => {
     console.log('in delete route', req.params.id)
