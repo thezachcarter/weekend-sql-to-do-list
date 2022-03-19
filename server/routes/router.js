@@ -39,6 +39,23 @@ router.post('/', (req, res) => {
 //PUT
 
 //DELETE
-
+router.delete('/:id', (req, res) => {
+    console.log('in delete route', req.params.id)
+  
+    //sanitize SQL inputs
+    const values = [req.params.id];
+    
+    const queryText = `
+    DELETE FROM "to-do"
+    WHERE "id" = $1;`
+  
+    pool.query(queryText, values)
+    .then( result => {
+        res.sendStatus(204)
+    }).catch( err => {
+        console.log(err);
+        res.sendStatus(500)
+    })
+  })
 
 module.exports = router;

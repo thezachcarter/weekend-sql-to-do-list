@@ -17,12 +17,12 @@
 [x] get
 [x] post
 [ ] put
-[ ] delete
-[ ] pool
+[x] delete
+[x] pool
 
 ##Create The App
-[ ] create a function that allows users to create a task and add it to a lis on the DOM
-    [ ] store created task in database
+[x] create a function that allows users to create a task and add it to a lis on the DOM
+    [x] store created task in database
     [ ] clear and refresh DOM whenever a new task is created so that the list i
 [ ] each task should have options to mark as completed or to delete 
     [ ] completed tasks should change in appearance on the DOM
@@ -32,6 +32,8 @@
 ## Stretch Goals
 
 For each of your strech goals, you will be practicing git branching. Please refer to the branching notes for a reminder on commands. Each branch will be merged into main using `--no-ff`. This will allow us to see that you branched your feature when you turn in your code.
+
+[ ] LUXON
 
 - `feature-styling-bootstrap` 
 

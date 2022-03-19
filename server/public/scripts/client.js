@@ -8,7 +8,8 @@ console.log('this is the date', date);
 $(document).ready(function () {
     console.log('JQ READY!');
     getList();
-
+    $('#addTask').on('click', createTask)
+    $('#listDisplay').on('click', ".deleteBtn", deleteTask)
 })
 
 //GET to-do list
@@ -30,8 +31,8 @@ function createTask() {
     console.log('in createTask function');
 
     let task = {
-        task: 'test task',
-        completed: true
+        task: $('#taskIn').val(),
+        completed: false
     }
 
     addTask(task);
@@ -41,7 +42,7 @@ function createTask() {
 //POST newTask
 function addTask( task ){
     console.log('in addTask function', task);
-    
+
     $.ajax({
         type: 'POST',
         url: '/to-do',
@@ -56,20 +57,44 @@ function addTask( task ){
 
 //render
 function render(list){
+    console.log('in render function');
+
     $('#listDisplay').empty();
-console.log();
+
     for(let task of list){
         
         let row = $(`
         <tr>
-            <td></td>
+            <td><button class="green">✔️</button></td>
             <td>${task.task}</td>
-            <td><button>❌</button></td>
+            <td><button class="tan deleteBtn">❌</button></td>
         </tr>
         `)
 
         row.data('task', task);
 
-        $('#listDisplay').append(row);
+        $('#listDisplay').prepend(row);
     }
     }
+
+//DELETE
+
+function deleteTask() {
+    console.log('in deleteTask function');
+
+    let task = $(this).closest('tr').data('task')
+    id = task.id
+    console.log('delete ID', id);
+
+    $.ajax({
+        url: `/to-do/${id}`,
+        method: 'DELETE',
+    }).then(function (response) {
+        console.log(id, 'deleted!');
+        getList();
+    }).catch(function (err) {
+        console.log(err);
+    })
+    
+    
+}
