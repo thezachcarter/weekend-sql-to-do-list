@@ -9,12 +9,13 @@
 [x] set up server, check for success
 
 ##Set Up Database
-[ ] make db and table in postico -Use the name `weekend-to-do-app
-[ ] include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries
+[x] make db and table in postico -Use the name `weekend-to-do-app
+[x] include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries
+[ ] double check before submission
 
 ## Connect Server and Database
-[ ] get
-[ ] post
+[x] get
+[x] post
 [ ] put
 [ ] delete
 [ ] pool
