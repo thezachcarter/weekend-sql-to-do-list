@@ -93,22 +93,33 @@ function render(list) {
 //DELETE
 
 function deleteTask() {
-    console.log('in deleteTask function');
+    console.log('in deleteYes function');
 
     let task = $(this).closest('tr').data('task')
     id = task.id;
     console.log('delete ID', id);
 
-    $.ajax({
-        url: `/to-do/${id}`,
-        method: 'DELETE',
-    }).then(function (response) {
-        console.log(id, 'deleted!');
-        getList();
-    }).catch(function (err) {
-        console.log(err);
-    })
+    $('#myModal').modal('show');
+    $('#myModal').on('click', "#deleteYes", deleteYes)
+    $('#myModal').on('click', "#deleteNo", deleteNo)
 
+    function deleteYes(){
+        $.ajax({
+            url: `/to-do/${id}`,
+            method: 'DELETE',
+        }).then(function (response) {
+            console.log(id, 'deleted!');
+            getList();
+        }).catch(function (err) {
+            console.log(err);
+        })
+
+        $('#myModal').modal('hide');        
+    }
+
+    function deleteNo() {
+        $('#myModal').modal('hide');
+    }
 }
 
 function toggleTask() {

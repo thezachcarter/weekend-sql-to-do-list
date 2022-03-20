@@ -25,6 +25,23 @@
         </table>
     </div>
 
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Delete?</h5>
+            </div>
+            <div class="modal-body">
+              <p>Delete item from list? This action an not be undone.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="deleteYes">Delete</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="deleteNo">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <script src="./vendors/jquery.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="./vendors/bootstrap.js"></script>
