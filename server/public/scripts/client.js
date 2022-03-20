@@ -37,7 +37,7 @@ function createTask() {
     }
 
     addTask(task);
-    //clear inputs
+    $('#taskIn').val('');
 }
 
 //POST newTask
@@ -67,7 +67,7 @@ function render(list) {
         if (task.completed === true) {
 
             row = $(`
-            <tr class="table-success">
+            <tr>
                 <td><button class="btn btn-secondary toggleBtn">✔️</button></td>
                 <td><s>${task.task}</s></td>
                 <td><button class="btn btn-secondary deleteBtn">❌</button></td>
