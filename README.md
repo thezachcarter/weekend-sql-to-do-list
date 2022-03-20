@@ -1,9 +1,7 @@
-# Project Name
+# SQL TO-DO LIST
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+SQL TO-DO LIST allows you to track tasks that you plan on doing.
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Add a task

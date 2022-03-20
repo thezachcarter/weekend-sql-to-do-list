@@ -1,8 +1,8 @@
 console.log('JS READY!');
 
-let DateTime = luxon.DateTime.local().toString();
+let DateTime = luxon.DateTime.local().toLocaleString();
 
-console.log('this is the date', DateTime);
+console.log('this is the DateTime', DateTime);
 
 $(document).ready(function () {
     console.log('JQ READY!');
@@ -70,8 +70,7 @@ function render(list) {
             row = $(`
             <tr>
                 <td><button class="btn btn-secondary toggleBtn">✔️</button></td>
-                <td><span class="small mark">created: ${task.timeCreated}</span>
-                    <span class="small mark">created: ${task.timeCompleted}</span></td>
+                <td><s>${task.task}</s><br><span class="small mark">created: ${task.timeCreated}</span></td>
                 <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
@@ -136,8 +135,7 @@ function toggleTask() {
         url: `/to-do/${id}`,
         method: 'PUT',
         data: {
-            completed: task.completed
-            
+            completed: task.completed,
         }
     }).then(function (response) {
         console.log(id, 'completed!');
