@@ -32,7 +32,8 @@ function createTask() {
 
     let task = {
         task: $('#taskIn').val(),
-        completed: false
+        completed: false,
+        timeCreated: DateTime.now().toString()
     }
 
     addTask(task);
@@ -68,7 +69,7 @@ function render(list) {
             row = $(`
             <tr>
                 <td><button class="btn btn-secondary toggleBtn">✔️</button></td>
-                <td><s>${task.task}</s></td>
+                <td><s>${task.task}</s><br><span>${task.timeCreated}</span></td>
                 <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
