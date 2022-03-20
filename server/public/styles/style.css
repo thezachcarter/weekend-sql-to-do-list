@@ -1,4 +1,4 @@
-.green {
+/* .green {
     background-color: #6EBF8B;
 }
 
@@ -13,8 +13,8 @@
 .redText {
     color: #D82148;
     font-weight: bolder;
-}
+} */
 
-.completed {
+.complete {
     text-decoration: line-through;
 }

@@ -67,19 +67,19 @@ function render(list) {
         if (task.completed === true) {
 
             row = $(`
-            <tr class="completed">
-                <td><button class="green toggleBtn">✔️</button></td>
-                <td>${task.task}</td>
-                <td><button class="tan redText deleteBtn"> X </button></td>
+            <tr class="table-success">
+                <td><button class="btn btn-secondary toggleBtn">✔️</button></td>
+                <td><s>${task.task}</s></td>
+                <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
         } else {
 
             row = $(`
             <tr>
-                <td><button class="green toggleBtn">✔️</button></td>
+                <td><button class="btn btn-success toggleBtn">✔️</button></td>
                 <td>${task.task}</td>
-                <td><button class="tan redText deleteBtn"> X </button></td>
+                <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
         }
