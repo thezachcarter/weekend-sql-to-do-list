@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 
     let queryText =`
         INSERT INTO "to-do" (
-        "task", "completed", "time-created")    
+        "task", "completed", "timeCreated")    
         VALUES ($1, $2, $3);
         `
     let values = [task.task, task.completed, task.timeCreated]

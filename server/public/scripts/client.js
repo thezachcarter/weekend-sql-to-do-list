@@ -1,8 +1,8 @@
 console.log('JS READY!');
 
-let DateTime = luxon.DateTime;
+let DateTime = luxon.DateTime.local().toString();
 
-console.log('this is the date', DateTime.now().toString());
+console.log('this is the date', DateTime);
 
 $(document).ready(function () {
     console.log('JQ READY!');
@@ -33,7 +33,7 @@ function createTask() {
     let task = {
         task: $('#taskIn').val(),
         completed: false,
-        timeCreated: DateTime.now().toString()
+        timeCreated: DateTime
     }
 
     addTask(task);
@@ -64,12 +64,14 @@ function render(list) {
 
     for (let task of list) {
         console.log(task);
-        if (task.completed === true) {
 
+        if (task.completed === true) {
+            
             row = $(`
             <tr>
                 <td><button class="btn btn-secondary toggleBtn">✔️</button></td>
-                <td><s>${task.task}</s><br><span>${task.timeCreated}</span></td>
+                <td><span class="small mark">created: ${task.timeCreated}</span>
+                    <span class="small mark">created: ${task.timeCompleted}</span></td>
                 <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
@@ -78,7 +80,7 @@ function render(list) {
             row = $(`
             <tr>
                 <td><button class="btn btn-success toggleBtn">✔️</button></td>
-                <td>${task.task}</td>
+                <td>${task.task}<br><span class="small mark">created: ${task.timeCreated}</span></td>
                 <td><button class="btn btn-secondary deleteBtn">❌</button></td>
             </tr>
             `)
@@ -135,6 +137,7 @@ function toggleTask() {
         method: 'PUT',
         data: {
             completed: task.completed
+            
         }
     }).then(function (response) {
         console.log(id, 'completed!');
