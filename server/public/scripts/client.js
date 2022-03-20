@@ -1,9 +1,8 @@
 console.log('JS READY!');
 
-// let now = DateTime.now();
-// console.log(now);
-let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
-console.log('this is the date', date);
+let DateTime = luxon.DateTime;
+
+console.log('this is the date', DateTime.now().toString());
 
 $(document).ready(function () {
     console.log('JQ READY!');
