@@ -10,6 +10,11 @@
    background-color: #151D3B;
 }
 
+.redText {
+    color: #D82148;
+    font-weight: bolder;
+}
+
 .completed {
     text-decoration: line-through;
 }

@@ -70,7 +70,7 @@ function render(list) {
             <tr class="completed">
                 <td><button class="green toggleBtn">✔️</button></td>
                 <td>${task.task}</td>
-                <td><button class="tan deleteBtn">❌</button></td>
+                <td><button class="tan redText deleteBtn"> X </button></td>
             </tr>
             `)
         } else {
@@ -79,7 +79,7 @@ function render(list) {
             <tr>
                 <td><button class="green toggleBtn">✔️</button></td>
                 <td>${task.task}</td>
-                <td><button class="tan deleteBtn">❌</button></td>
+                <td><button class="tan redText deleteBtn"> X </button></td>
             </tr>
             `)
         }
